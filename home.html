@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ditanate World | Официальный сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff9d00;
+            --bg: #0f0f0f;
+            --text: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Фоновый градиент для атмосферы */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f0f 100%);
+            z-index: -1;
+        }
+
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            gap: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        nav a { color: var(--text); text-decoration: none; opacity: 0.6; transition: 0.3s; }
+        nav a:hover { opacity: 1; color: var(--accent); }
+
+        /* Главная секция */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .logo-text {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 40%, #555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .status-badge {
+            background: var(--accent);
+            color: black;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .server-ip {
+            margin-top: 40px;
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .server-ip:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); }
+        .server-ip span { color: var(--accent); display: block; font-size: 0.7rem; margin-bottom: 5px; }
+        .server-ip strong { font-size: 1.4rem; letter-spacing: 1px; }
+
+        /* Секция контента */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .card.dev { opacity: 0.5; cursor: not-allowed; position: relative; overflow: hidden; }
+        .card.dev::after {
+            content: "В РАЗРАБОТКЕ";
+            position: absolute;
+            top: 20px; right: -30px;
+            background: #444;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.6rem;
+            font-weight: 800;
+        }
+
+        h2 { font-size: 1.5rem; margin-top: 0; }
+        p { color: #888; line-height: 1.6; }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<nav>
+    <a href="https://mc.ditanate.pro">Главная</a>
+    <a href="https://mc.ditanate.pro/rules">Правила</a>
+</nav>
+
+<header>
+    <div class="status-badge">Private Alpha</div>
+    <h1 class="logo-text">DITANATE<br>WORLD</h1>
+    <p style="max-width: 600px; color: #888; font-size: 1.1rem;">
+        Уникальный опыт анархии на версии 1.16.5. <br>Мы создаем мир, где правила пишешь ты.
+    </p>
+    
+    <div class="server-ip" onclick="copyIP()">
+        <span>КЛИКНИ, ЧТОБЫ КОПИРОВАТЬ IP</span>
+        <strong>MC.DITANATE.PRO</strong>
+    </div>
+</header>
+
+<div class="content">
+    <div class="grid">
+        <div class="card">
+            <h2>О проекте</h2>
+            <p>Ditanate World — это не просто сервер. Это сообщество, основанное в Италии и доступное всему миру. Мы используем лучшие технологии для минимального пинга и максимального комфорта.</p>
+        </div>
+        
+        <div class="card dev">
+            <h2>Личный кабинет</h2>
+            <p>Управление профилем, настройки безопасности и статистика игрока станут доступны после открытия.</p>
+        </div>
+
+        <div class="card dev">
+            <h2>Магазин товаров</h2>
+            <p>На данный момент продажа привилегий и внутриигровых предметов закрыта. Мы против Pay-to-Win системы.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>DITANATE WORLD © 2026<br>Designed for DitanatePC. Italy.</p>
+</footer>
+
+<script>
+    function copyIP() {
+        const el = document.createElement('textarea');
+        el.value = 'mc.ditanate.pro';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('IP сервера скопирован в буфер обмена!');
+    }
+</script>
+
+</body>
+</html>
