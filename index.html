@@ -30,6 +30,33 @@
             z-index: -1;
         }
 
+        /* Кнопка возврата на хаб */
+        .back-to-hub {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+        }
+        .back-to-hub:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
         /* Навигация */
         nav {
             display: flex;
@@ -138,6 +165,10 @@
 
 <div class="bg-glow"></div>
 
+<a href="https://ditanate.pro" class="back-to-hub">
+    <span>Ditanate HUB</span>
+</a>
+
 <nav>
     <a href="https://play.ditanate.pro">Главная</a>
     <a href="https://play.ditanate.pro/rules">Правила</a>
@@ -192,5 +223,4 @@
 </script>
 
 </body>
-
 </html>
