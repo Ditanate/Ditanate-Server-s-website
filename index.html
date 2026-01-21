@@ -159,6 +159,35 @@
             font-size: 0.8rem;
             color: #444;
         }
+
+        /* Стили для кнопок политик */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+
+        .footer-btn:hover {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -182,7 +211,7 @@
     </p>
     
     <div class="server-ip" onclick="copyIP()">
-        <span>КЛИКНИ, ЧТОБЫ СКОПИРОВАТЬ IP</span>
+        <span>КЛИКНИ, ЧТОБЫ СКОПИРОВАТЬ IP АДРЕС СЕРВЕРА</span>
         <strong>mc.ditanate.pro</strong>
     </div>
 </header>
@@ -207,6 +236,11 @@
 </div>
 
 <footer>
+    <div class="footer-links">
+        <a href="https://ditanate.pro/privacy" class="footer-btn">Privacy policy</a>
+        <a href="https://ditanate.pro/terms" class="footer-btn">Terms of Use</a>
+        <a href="https://ditanate.pro/cookie" class="footer-btn">Cookie Policy</a>
+    </div>
     <p>DITANATE WORLD © 2026<br>Designed for DitanatePC. Italy.</p>
 </footer>
 
@@ -218,7 +252,7 @@
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-        alert('IP сервера скопирован в буфер обмена!');
+        alert('IP адрес сервера скопирован в буфер обмена!');
     }
 </script>
 
